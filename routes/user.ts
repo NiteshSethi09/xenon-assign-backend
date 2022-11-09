@@ -2,7 +2,6 @@ import { Request, Response, Router } from "express";
 import { sign } from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
-import parser from "../utils/parser";
 import User, { validateUser } from "../model/user";
 import contact, { validateForm } from "../model/contactUs";
 

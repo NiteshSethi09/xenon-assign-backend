@@ -17,7 +17,9 @@ app.use(cors());
 
 app.use("/product", productRoutes);
 app.use("/user", userRoutes);
-
+app.get("/", (req, res) => {
+  res.json({ error: false, messgae: "Hello world" });
+});
 mongoose
   .connect("mongodb+srv://nitesh:nitesh00@project.xeny0.mongodb.net/xenon")
   .then(() => app.listen(5000, () => console.log("Server is running.")))
