@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
     res.json({ error: false, messgae: "Hello world" });
 });
 mongoose_1.default
-    .connect("mongodb+srv://nitesh:nitesh00@project.xeny0.mongodb.net/xenon")
-    .then(() => app.listen(5000, () => console.log("Server is running.")))
+    .connect(process.env.MONGO_URI)
+    .then(() => app.listen(process.env.PORT || 5000, () => console.log("Server is running.")))
     .catch((e) => console.log("DB connection error:", e.message));
