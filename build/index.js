@@ -1,7 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
@@ -19,9 +21,13 @@ app.use((0, cors_1.default)());
 app.use("/product", product_1.default);
 app.use("/user", user_1.default);
 app.get("/", (req, res) => {
-    res.json({ error: false, messgae: "Hello world" });
+  res.json({ error: false, messgae: "Hello world" });
 });
 mongoose_1.default
-    .connect(process.env.MONGO_URI)
-    .then(() => app.listen(process.env.PORT || 5000, () => console.log("Server is running.")))
-    .catch((e) => console.log("DB connection error:", e.message));
+  .connect(process.env.MONGO_URI)
+  .then(() =>
+    app.listen(process.env.PORT || 5000, () =>
+      console.log("Server is running.")
+    )
+  )
+  .catch((e) => console.log("DB connection error:", e.message));
