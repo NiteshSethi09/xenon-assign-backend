@@ -22,5 +22,9 @@ app.get("/", (req, res) => {
 });
 mongoose
   .connect("mongodb+srv://nitesh:nitesh00@project.xeny0.mongodb.net/xenon")
-  .then(() => app.listen(5000, () => console.log("Server is running.")))
+  .then(() =>
+    app.listen(process.env.$PORT || 5000, () =>
+      console.log("Server is running.")
+    )
+  )
   .catch((e: any) => console.log("DB connection error:", e.message));
