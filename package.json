@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "node index.ts",
-    "start:dev": "nodemon index.ts"
+    "start": "cd ./build && node index.js",
+    "start:dev": "nodemon index.ts",
+    "tsc": "tsc",
+    "start:prod": "cd build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
